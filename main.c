@@ -26,19 +26,17 @@ void ataque(Personagem *atacante, Personagem *defensor)
 
     printf("%s obteve um %d no ataque\n", atacante->nome, rolagem_ataque);
 
-    if (rolagem_ataque >= defensor->ca)
-    {
+    if (rolagem_ataque - atacante->bonus_ataque == 20) { // Checa por um 20 natural
+        int dano = (atacante->dano_base - defensor->rd) * 2; // Dobra o dano
+        if (dano < 0) dano = 0;
+        defensor->hp -= dano;
+        printf("%s tirou um 20 no dado e causou %d de dano crítico\n", atacante->nome, dano);
+    } else if (rolagem_ataque >= defensor->ca) {
         int dano = atacante->dano_base - defensor->rd;
         if (dano < 0) dano = 0;
-
         defensor->hp -= dano;
         printf("O ataque de %s acertou e causou %d de dano\n", atacante->nome, dano);
-
-        if (defensor->hp < 0)
-            defensor->hp = 0;
-    }
-    else
-    {
+    } else {
         printf("%s errou o ataque\n", atacante->nome);
     }
 }
@@ -94,8 +92,8 @@ int main()
 
     srand(time(NULL));
 
-    Personagem jogador = {"Asterius", 50, 20, 10, 10, 20, 5}; // Resp: Pv, CA, Iniciativa, bonus, dano, rd
-    Personagem inimigo = {"Teseu", 50, 20, 9, 10, 20, 5};
+    Personagem jogador = {"Asterius", 20, 20, 10, 0, 10, 0}; // Resp: Pv, CA, Iniciativa, bonus, dano, rd
+    Personagem inimigo = {"Teseu", 20, 20, 9, 0, 10, 0};
 
     clock_t start_time = clock();
 
