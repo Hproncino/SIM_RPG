@@ -4,8 +4,8 @@
 
 int rolar_dado(int faces)
 {
-    return (rand() % faces) + 1;
-}
+    return (rand() % faces) + 1;    // Simula a rolagem de um dado com um número específico de faces
+}                                   // Retorna um numero entre 1 e o número de faces
 
 typedef struct
 {
@@ -26,11 +26,11 @@ void ataque(Personagem *atacante, Personagem *defensor)
 
     printf("%s obteve um %d no ataque\n", atacante->nome, rolagem_ataque);
 
-    if (rolagem_ataque - atacante->bonus_ataque == 20) { // Checa por um 20 natural
-        int dano = (atacante->dano_base - defensor->rd) * 2; // Dobra o dano
+    if (rolagem_ataque - atacante->bonus_ataque == 20) {        // Checa por um 20 natural
+        int dano = (atacante->dano_base - defensor->rd) * 2;    // Dobra o dano
         if (dano < 0) dano = 0;
         defensor->hp -= dano;
-        printf("%s tirou um 20 no dado e causou %d de dano crítico\n", atacante->nome, dano);
+        printf("%s tirou um 20 no dado e causou %d de dano critico\n", atacante->nome, dano);
     } else if (rolagem_ataque >= defensor->ca) {
         int dano = atacante->dano_base - defensor->rd;
         if (dano < 0) dano = 0;

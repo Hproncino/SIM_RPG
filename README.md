@@ -22,6 +22,17 @@ Tempo de Execução: O tempo total gasto na simulação de combate é calculado 
 
 ![image](https://github.com/user-attachments/assets/7f7722c4-83fd-4c0e-978a-73e8eac43366)
 
-Ainda planejo adicionar funcionalidades como crítico em um d20 padrão e resistencia a dano, assim como magias, itens, ETC...
+Ainda planejo adicionar funcionalidades como resistencia a certos tipos de dano, assim como magias, itens, ETC...
+
+# Algumas Features implementadas:
+
+- **Rolagem de dados**: Simula a rolagem de um dado com faces espefícas, como um d20.
+
+- **Redução de dano**: Valor de redução de dano ao se acertar um ataque.
+
+- **iniciativa**: Ao se iniciar a batalha aquele que tiver o maior valor de iniciativa começará primeiro com o direito do primeiro ataque. 
+
+- **Dano Crítico**: Dano crítico inflingido ao se tirar um 20 natural na rolagem de dados, com multiplicação do dano por 2x padrão, podendo ser alterado no código.
+
 
 
