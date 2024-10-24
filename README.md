@@ -6,17 +6,17 @@ Este algoritmo implementa uma simulação de combate entre dois personagens em u
 
 - Funcionalidades:
 
-Rolagem de Dados: A função rolar_dado(int faces) simula a rolagem de um dado com um número específico de faces, retornando um valor entre 1 e o número de faces.
+**Rolagem de Dados**: A função rolar_dado(int faces) simula a rolagem de um dado com um número específico de faces, retornando um valor entre 1 e o número de faces.
 
-Estrutura de Personagem: A estrutura Personagem contém atributos como nome, pontos de vida (HP), classe de armadura (CA), iniciativa, bônus de ataque, dano base, resistência a dano (RD) e resistência.
+**Estrutura de Personagem**: A estrutura Personagem contém atributos como nome, pontos de vida (HP), classe de armadura (CA), iniciativa, bônus de ataque, dano base, resistência a dano (RD) e resistência.
 
-Ataque: A função ataque(Personagem *atacante, Personagem *defensor) calcula se um ataque acerta ou erra, determina o dano causado e atualiza os pontos de vida do defensor.
+**Ataque**: A função ataque(Personagem *atacante, Personagem *defensor) calcula se um ataque acerta ou erra, determina o dano causado e atualiza os pontos de vida do defensor.
 
-Verificação de Vida: A função esta_vivo(Personagem *personagem) verifica se o personagem ainda tem pontos de vida.
+**Verificação de Vida**: A função esta_vivo(Personagem *personagem) verifica se o personagem ainda tem pontos de vida.
 
-Combate: A função combate(Personagem *jogador, Personagem *inimigo) gerencia o fluxo do combate, alternando turnos entre o jogador e o inimigo até que um deles seja derrotado.
+**Combate**: A função combate(Personagem *jogador, Personagem *inimigo) gerencia o fluxo do combate, alternando turnos entre o jogador e o inimigo até que um deles seja derrotado.
 
-Tempo de Execução: O tempo total gasto na simulação de combate é calculado e exibido ao final do combate.
+**Tempo de Execução**: O tempo total gasto na simulação de combate é calculado e exibido ao final do combate.
 
 - Um breve exemplo de como seria o output:
 
@@ -25,8 +25,6 @@ Tempo de Execução: O tempo total gasto na simulação de combate é calculado 
 Ainda planejo adicionar funcionalidades como resistencia a certos tipos de dano, assim como magias, itens, ETC...
 
 # Algumas Features implementadas:
-
-- **Rolagem de dados**: Simula a rolagem de um dado com faces espefícas, como um d20.
 
 - **Redução de dano**: Valor de redução de dano ao se acertar um ataque.
 
