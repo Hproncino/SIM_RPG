@@ -4,8 +4,8 @@
 
 int rolar_dado(int faces)
 {
-    return (rand() % faces) + 1;    // Simula a rolagem de um dado com um número específico de faces
-}                                   // Retorna um numero entre 1 e o número de faces
+    return (rand() % faces) + 1; // Simula a rolagem de um dado com um número específico de faces
+} // Retorna um numero entre 1 e o número de faces
 
 typedef struct
 {
@@ -16,7 +16,7 @@ typedef struct
     int bonus_ataque;
     int dano_base;
     int rd;
-    int resistencia;
+    //int resistencia;
 
 } Personagem;
 
@@ -24,19 +24,26 @@ void ataque(Personagem *atacante, Personagem *defensor)
 {
     int rolagem_ataque = rolar_dado(20) + atacante->bonus_ataque;
 
-    printf("%s obteve um %d no ataque\n", atacante->nome, rolagem_ataque);
+    printf("%s obteve um %d no ataque\n\n", atacante->nome, rolagem_ataque);
 
-    if (rolagem_ataque - atacante->bonus_ataque == 20) {        // Checa por um 20 natural
-        int dano = (atacante->dano_base - defensor->rd) * 2;    // Dobra o dano
-        if (dano < 0) dano = 0;
+    if (rolagem_ataque - atacante->bonus_ataque == 20)       // Checa por um 20 natural
+    {
+        int dano = (atacante->dano_base - defensor->rd) * 2; // Dobra o dano
+        if (dano < 0)
+            dano = 0;
         defensor->hp -= dano;
-        printf("%s tirou um 20 no dado e causou %d de dano critico\n", atacante->nome, dano);
-    } else if (rolagem_ataque >= defensor->ca) {
+        printf("%s tirou um 20 no dado e causou %d de dano critico em %s!\n", atacante->nome, dano, defensor->nome);
+    }
+    else if (rolagem_ataque >= defensor->ca)
+    {
         int dano = atacante->dano_base - defensor->rd;
-        if (dano < 0) dano = 0;
+        if (dano < 0)
+            dano = 0;
         defensor->hp -= dano;
         printf("O ataque de %s acertou e causou %d de dano\n", atacante->nome, dano);
-    } else {
+    }
+    else
+    {
         printf("%s errou o ataque\n", atacante->nome);
     }
 }
@@ -71,7 +78,7 @@ void combate(Personagem *jogador, Personagem *inimigo)
             }
         }
 
-        printf("%s tem %d PV restantes\n", jogador->nome, jogador->hp);
+        printf("%s tem %d PV restantes\n\n", jogador->nome, jogador->hp);
         printf("%s tem %d PV restantes\n", inimigo->nome, inimigo->hp);
 
         turno++;
@@ -79,7 +86,7 @@ void combate(Personagem *jogador, Personagem *inimigo)
 
     if (esta_vivo(jogador))
     {
-        printf("%s venceu o combate\n", jogador->nome);
+        printf("%s venceu o combate\n\n", jogador->nome);
     }
     else
     {
