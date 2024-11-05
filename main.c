@@ -4,8 +4,8 @@
 
 int rolar_dado(int faces)
 {
-    return (rand() % faces) + 1; // Simula a rolagem de um dado com um número específico de faces
-} // Retorna um numero entre 1 e o número de faces
+    return (rand() % faces) + 1;    // Simula a rolagem de um dado com um número específico de faces
+}                                   // Retorna um numero entre 1 e o número de faces
 
 typedef struct
 {
@@ -16,7 +16,6 @@ typedef struct
     int bonus_ataque;
     int dano_base;
     int rd;
-    //int resistencia;
 
 } Personagem;
 
