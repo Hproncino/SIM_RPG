@@ -4,30 +4,30 @@
 
 int rolar_dado(int faces)
 {
-    return (rand() % faces) + 1;    // Simula a rolagem de um dado com um número específico de faces
-}                                   // Retorna um numero entre 1 e o número de faces
+    return (rand() % faces) + 1;    // Simula a rolagem de um dado com um número específico de faces.
+}                                   // Retorna um numero entre 1 e o número de faces.
 
 typedef struct
 {
     char nome[20];
-    int hp;
-    int ca;
-    int iniciativa;
-    int bonus_ataque;
-    int dano_base;
-    int rd;
+    int hp;             // Pontos de Vida
+    int ca;             // Classe de Armadura
+    int iniciativa;     
+    int bonus_ataque;   
+    int dano_base;      
+    int rd;             // Resistência ao Dano
 
 } Personagem;
 
 void ataque(Personagem *atacante, Personagem *defensor)
 {
-    int rolagem_ataque = rolar_dado(20) + atacante->bonus_ataque;
+    int rolagem_ataque = rolar_dado(20) + atacante->bonus_ataque;   // Soma o resultado da rolagem com o bonus de ataque.
 
     printf("%s obteve um %d no ataque\n\n", atacante->nome, rolagem_ataque);
 
-    if (rolagem_ataque - atacante->bonus_ataque == 20)       // Checa por um 20 natural
+    if (rolagem_ataque - atacante->bonus_ataque == 20)       // Checa por um 20 natural.
     {
-        int dano = (atacante->dano_base - defensor->rd) * 2; // Dobra o dano
+        int dano = (atacante->dano_base - defensor->rd) * 2; // Dobra o dano.
         if (dano < 0)
             dano = 0;
         defensor->hp -= dano;
@@ -47,22 +47,22 @@ void ataque(Personagem *atacante, Personagem *defensor)
     }
 }
 
-int esta_vivo(Personagem *personagem)
+int esta_vivo(Personagem *personagem) // Checa se o personagem está vivo.
 {
     return personagem->hp > 0;
 }
 
-void combate(Personagem *jogador, Personagem *inimigo)
+void combate(Personagem *jogador, Personagem *inimigo)  
 {
-    int turno = 1;
+    int turno = 1;  // Inicializa o turno.
 
-    while (esta_vivo(jogador) && esta_vivo(inimigo))
+    while (esta_vivo(jogador) && esta_vivo(inimigo))    // Enquanto ambos os personagens estiverem vivos, o combate continua.
     {
         printf("\n=== Turno %d ===\n", turno);
 
-        if (jogador->iniciativa > inimigo->iniciativa)
+        if (jogador->iniciativa > inimigo->iniciativa)  // Checa quem tem a maior iniciativa.
         {
-            ataque(jogador, inimigo);
+            ataque(jogador, inimigo);   
             if (esta_vivo(inimigo))
             {
                 ataque(inimigo, jogador);
@@ -80,7 +80,7 @@ void combate(Personagem *jogador, Personagem *inimigo)
         printf("%s tem %d PV restantes\n\n", jogador->nome, jogador->hp);
         printf("%s tem %d PV restantes\n", inimigo->nome, inimigo->hp);
 
-        turno++;
+        turno++;    // Incrementa o turno.
     }
 
     if (esta_vivo(jogador))
@@ -98,12 +98,13 @@ int main()
 
     srand(time(NULL));
 
+    // Criação dos personagens e seus atributos.
     Personagem jogador = {"Asterius", 20, 20, 10, 0, 10, 0}; // Resp: Pv, CA, Iniciativa, bonus, dano, rd
     Personagem inimigo = {"Teseu", 20, 20, 9, 0, 10, 0};
 
     clock_t start_time = clock();
 
-    combate(&jogador, &inimigo);
+    combate(&jogador, &inimigo);    // Inicia o combate.
 
     clock_t end_time = clock();
     double tempo_gasto = (double)(end_time - start_time) / CLOCKS_PER_SEC;
