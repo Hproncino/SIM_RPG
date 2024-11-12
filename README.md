@@ -2,7 +2,7 @@
 
 - Descrição:
 
-Este algoritmo implementa uma simulação de combate entre dois personagens em um jogo de RPG. Utiliza conceitos de rolagem de dados, ataque, defesa e gerenciamento de pontos de vida (HP). O combate é baseado em turnos, onde cada personagem tem a chance de atacar, ao atacarem é comparado o valor de seus acertos com a defesa do personagem que caso seja maior ou igual a ela o alvo leva o dano especificado.
+Este algoritmo implementa uma simulação de combate entre dois personagens em um jogo de RPG. Utiliza conceitos de rolagem de dados, ataque, defesa e gerenciamento de pontos de vida (Hp). O combate é baseado em turnos, onde cada personagem tem a chance de atacar, ao atacarem é comparado o valor de seus acertos com a defesa do personagem que caso seja maior ou igual a ela o alvo leva o dano especificado.
 
 - Funcionalidades:
 
@@ -22,7 +22,7 @@ Este algoritmo implementa uma simulação de combate entre dois personagens em u
 
 ![image](https://github.com/user-attachments/assets/7f7722c4-83fd-4c0e-978a-73e8eac43366)
 
-Ainda planejo adicionar funcionalidades como resistencia a certos tipos de dano, assim como magias, itens, ETC...
+Ainda planejo adicionar funcionalidades no futuro.
 
 # Algumas Features implementadas:
 
