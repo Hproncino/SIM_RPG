@@ -4,6 +4,8 @@
 
 Este algoritmo implementa uma simulação de combate entre dois personagens em um jogo de RPG. Utiliza conceitos de rolagem de dados, ataque, defesa e gerenciamento de pontos de vida (Hp). O combate é baseado em turnos, onde cada personagem tem a chance de atacar, ao atacarem é comparado o valor de seus acertos com a defesa do personagem que caso seja maior ou igual a ela o alvo leva o dano especificado.
 
+Deixando claro que este projeto foi feito com o intuito de aprender sobre a linguagem C.
+
 - Funcionalidades:
 
 **Rolagem de Dados**: A função rolar_dado(int faces) simula a rolagem de um dado com um número específico de faces, retornando um valor entre 1 e o número de faces.
