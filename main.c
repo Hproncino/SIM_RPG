@@ -26,7 +26,7 @@ void ataque(Personagem *atacante, Personagem *defensor)
 {
     int rolagem_ataque = rolar_dado(20) + atacante->bonus_ataque; // Soma o resultado da rolagem com o bonus de ataque.
 
-    printf("%s obteve um %d no ataque\n\n", atacante->nome, rolagem_ataque);
+    printf("%s obteve um %d no ataque\n", atacante->nome, rolagem_ataque);
 
     if (rolagem_ataque - atacante->bonus_ataque == 1) // Checa por um 1 natural(ou falha crítica).
     {
@@ -54,7 +54,7 @@ void ataque(Personagem *atacante, Personagem *defensor)
     }
     else
     {
-        printf("%s errou o ataque\n", atacante->nome);
+        printf("%s errou o ataque\n\n", atacante->nome);
     }
 }
 
@@ -88,7 +88,7 @@ void combate(Personagem *jogador, Personagem *inimigo)
             }
         }
 
-        printf("%s tem %d PV restantes\n\n", jogador->nome, jogador->hp);
+        printf("%s tem %d PV restantes\n", jogador->nome, jogador->hp);
         printf("%s tem %d PV restantes\n", inimigo->nome, inimigo->hp);
 
         turno++; // Incrementa o turno.
@@ -96,11 +96,11 @@ void combate(Personagem *jogador, Personagem *inimigo)
 
     if (esta_vivo(jogador))
     {
-        printf("%s venceu o combate\n\n", jogador->nome);
+        printf("\n%s venceu o combate\n", jogador->nome);
     }
     else
     {
-        printf("%s venceu o combate\n\n", inimigo->nome);
+        printf("\n%s venceu o combate\n", inimigo->nome);
     }
 }
 
