@@ -17,9 +17,6 @@ typedef struct
     int bonus_ataque;
     int dano_base;
     int rd; // Resistência ao Dano
-    // int distancia;
-    // int x, y;
-
 } Personagem;
 
 void ataque(Personagem *atacante, Personagem *defensor)
@@ -34,7 +31,7 @@ void ataque(Personagem *atacante, Personagem *defensor)
         if (dano < 0)
             dano = 0;
         atacante->hp -= dano;
-        printf("%s tirou 1 no dado e sofreu uma falha crítica, recebendo %d de dano em sí mesmo!\n", atacante->nome, dano);
+        printf("%s tirou 1 no dado e sofreu uma falha crítica, recebendo %d de dano em sí mesmo!\n\n", atacante->nome, dano);
     }
     else if (rolagem_ataque - atacante->bonus_ataque == 20) // Checa por um 20 natural(ou acerto crítico).
     {
@@ -110,7 +107,7 @@ int main()
     srand(time(NULL));
 
     // Criação dos personagens e seus atributos.
-    Personagem jogador = {"Asterius", 20, 20, 10, 0, 10, 0}; // Resp: Pv, CA, Iniciativa, bonus, dano, rd
+    Personagem jogador = {"Asterius", 20, 20, 10, 0, 10, 0}; // Respectivamente: Pv, CA, Iniciativa, bonus, dano, rd
     Personagem inimigo = {"Teseu", 20, 20, 9, 0, 10, 0};
 
     clock_t start_time = clock();
